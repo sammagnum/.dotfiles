@@ -5,6 +5,7 @@
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
 
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -28,7 +29,9 @@ alias -s conf=vim
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+export PATH=$PATH:$HOME/bin
 
-eval "$(starship init zsh)"
+(which starship > /dev/null 2>&1 || mkdir -p $HOME/bin && sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --bin-dir $HOME/bin) && eval "$(starship init zsh)" 
+
 alias zyp=zypper
 alias sudo="sudo "
