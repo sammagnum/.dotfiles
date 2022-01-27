@@ -16,3 +16,9 @@ compinit
 export PATH=$PATH:$HOME/bin
 [[ -f $HOME/bin/starship ]] || sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --bin-dir $HOME/bin
 eval "$(starship init zsh)" 
+if [[ -d $HOME/bin/fzf ]] 
+then
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/bin/.fzf && ~/bin/.fzf/install
+fi
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/sbin:$PATH"
