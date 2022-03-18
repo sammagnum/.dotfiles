@@ -21,5 +21,6 @@ call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-repeat'
 
 call plug#end()
