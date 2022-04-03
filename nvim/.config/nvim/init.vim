@@ -6,6 +6,7 @@
 " nnoremap <C-H> <C-W><C-H>
 
 " set fillchars+=vert:\|
+let g:mapleader="\<Space>"
 tnoremap <ESC> <C-\><C-N>
 
 inoremap jk <ESC>
@@ -27,7 +28,6 @@ set backspace=indent,eol,start
 let g:vim_json_syntax_conceal = 0
 set colorcolumn=80
 set autoread
-set statusline="Welcome Sam, do ya thang mayne!"
 :set guioptions-=m "remove menu bar
 :set guioptions-=T "remove toolbar
 :set guioptions-=r "remove right-hand scroll bar
@@ -65,7 +65,15 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-telescope/telescope.nvim'
+" Plug 'glepnir/dashboard-nvim'
+Plug 'goolord/alpha-nvim'
 call plug#end()
+
+lua << EOF
+
+require'alpha'.setup(require'alpha.themes.startify'.opts)
+
+EOF
 
 colorscheme Atelier_LakesideDark
 
@@ -76,4 +84,13 @@ colorscheme Atelier_LakesideDark
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>  
+nnoremap <leader>fo <cmd>Telescope oldfiles<cr>  
+nnoremap <leader>cc <cmd>Telescope colorscheme<cr>  
+nnoremap <leader>fm <cmd>Telescope marks<cr>  
+
+
+autocmd VimEnter * :sleep 20m
+autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
+
+

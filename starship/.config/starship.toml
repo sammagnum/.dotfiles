@@ -19,3 +19,6 @@ show_always = true
 ssh_only = false
 format =  "[$hostname](bold blue) "
 disabled = false
+
+[shell]
+disabled = false
