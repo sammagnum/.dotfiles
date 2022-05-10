@@ -10,17 +10,25 @@ tnoremap <ESC> <C-\><C-N>
 inoremap jk <ESC>
 cnoreabbrev so so ~/.vimrc
 
+let mapleader=" "
 " Options
+set hidden
 set relativenumber number
 set noswapfile
 set bo=all
-set sta et ts=2 sw=2
+set hlsearch
+set incsearch
 
 " Plugins
 call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'tpope/vim-repeat'
-
+Plug 'haya14busa/incsearch.vim'
+Plug 'noahfrederick/vim-noctu'
+Plug 'Yggdroot/indentLine'
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
 call plug#end()
+
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
