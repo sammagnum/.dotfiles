@@ -39,3 +39,4 @@ export CT="Americas/Chicago"
 export EET="Egypt/Cairo"
 export IST="Asia/Kolkata"
 export FZF_CTRL_R_OPTS='--sort'
+export LC_CTYPE='en_US.UTF-8'
