@@ -31,4 +31,4 @@ Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
 call plug#end()
 
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+set ts=2 sts=2 sw=2 si expandtab

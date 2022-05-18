@@ -14,8 +14,9 @@ zstyle :compinstall filename '/home/samm/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-export PATH=$PATH:$HOME/bin:.
-[[ -f $HOME/bin/starship ]] || sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --bin-dir $HOME/bin
+mkdir -p .bin
+export PATH=$PATH:$HOME/.bin:.
+[[ -f $HOME/.bin/starship ]] || sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --bin-dir $HOME/.bin
 eval "$(starship init zsh)" 
 if [[ -d $HOME/bin/fzf ]] 
 then
@@ -27,7 +28,11 @@ export WECHALLUSER="smangum"
 export WECHALLTOKEN="118BF-49085-22A54-03B6F-D9122-68352"
 
 
-source /usr/local/ibmcloud/autocomplete/zsh_autocomplete
+if [ $HOST = "ibm" ]
+then
+  source /usr/local/ibmcloud/autocomplete/zsh_autocomplete
+fi
+
 alias ls=lsd --color
 alias la=lsd -A --color
 alias vim=nvim
