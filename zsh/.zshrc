@@ -56,4 +56,5 @@ export IST="Asia/Kolkata"
 export FZF_CTRL_R_OPTS='--sort'
 export LC_CTYPE='en_US.UTF-8'
 
-ls $HOME/.zshrc | entr git -C $HOME/.dotfiles commit -am
+ls $HOME/.zshrc | entr git -C $HOME/.dotfiles commit -am "autosave $(date)" && \
+                       git -C $HOME/.dotfiles push
