@@ -3,7 +3,7 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 unsetopt beep notify
-bindkey '^R' history-incremental-search-backward
+#bindkey '^R' history-incremental-search-backward
 
 # End of lines configured by zsh-newuser-install
 fpath=(~/.zfunc /usr/share/zsh/site-functions $fpath)
@@ -18,9 +18,9 @@ mkdir -p .bin
 export PATH=$PATH:$HOME/.bin:.
 [[ -f $HOME/.bin/starship ]] || sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --bin-dir $HOME/.bin
 eval "$(starship init zsh)" 
-if [[ -d $HOME/.bin/fzf ]] 
+if [ ! -d $HOME/.bin/fzf ] 
 then
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/bin/.fzf && ~/.bin/.fzf/install
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.bin/fzf && ~/.bin/fzf/install
 fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/sbin:$PATH"
@@ -58,3 +58,5 @@ export LC_CTYPE='en_US.UTF-8'
 
 eval "$(zoxide init zsh --cmd cd)"
 alias pd='git -C "$HOME/.dotfiles" commit -am "$(date)" && git -C "$HOME/.dotfiles" push'
+alias extonly='xrandr --output HDMI-2 --rate 75 --mode 3440x1440 --output eDP-1 --off'
+export PATH="$PATH:$HOME/.local/bin"
