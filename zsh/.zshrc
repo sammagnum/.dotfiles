@@ -30,22 +30,25 @@ export WECHALLTOKEN="118BF-49085-22A54-03B6F-D9122-68352"
 
 if [ ! -f '"${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim' ]
 then
-  sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+  sh -c 'curl -fsLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 fi
   
 if [ $HOST = "ibm" ]
 then
   source /usr/local/ibmcloud/autocomplete/zsh_autocomplete
+  $(which neofetch) --colors 4 6 1 2 8 6 --ascii_colors 19 1 18 4 17 6
+else
+  $(which neofetch)
 fi
 
-alias ls="lsd -l --color"
-alias la="lsd -lA --color"
+alias ls="lsd"
+alias la="lsd -lA"
+alias ll="lsd -l"
 PATH="$PATH:$HOME/.cargo/bin"
 alias vim=nvim
 alias vi=nvim
 setopt interactivecomments
-$(which neofetch) --colors 4 6 1 2 8 6 --ascii_colors 19 1 18 4 17 6
 #source /usr/local/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 export CT="Americas/Chicago"
 export EET="Egypt/Cairo"
@@ -53,3 +56,4 @@ export IST="Asia/Kolkata"
 export FZF_CTRL_R_OPTS='--sort'
 export LC_CTYPE='en_US.UTF-8'
 
+ls $HOME/.zshrc | entr git -C $HOME/.dotfiles commit -am
