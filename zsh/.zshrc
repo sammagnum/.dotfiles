@@ -56,3 +56,5 @@ export IST="Asia/Kolkata"
 export FZF_CTRL_R_OPTS='--sort'
 export LC_CTYPE='en_US.UTF-8'
 
+eval "$(zoxide init zsh --cmd cd)"
+alias pd='git -C "$HOME/.dotfiles" commit -am "$(date)" && git -C "$HOME/.dotfiles" push'
