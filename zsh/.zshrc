@@ -37,11 +37,9 @@ fi
 if [ $HOST = "ibm" ]
 then
   source /usr/local/ibmcloud/autocomplete/zsh_autocomplete
-  $(which neofetch) --colors 4 6 1 2 8 6 --ascii_colors 19 1 18 4 17 6
-else
-  $(which neofetch)
+  #$(which neofetch) --colors 4 6 1 2 8 6 --ascii_colors 19 1 18 4 17 6
 fi
-
+$(which neofetch)
 alias ls="lsd"
 alias la="lsd -lA"
 alias ll="lsd -l"
