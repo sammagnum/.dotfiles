@@ -43,6 +43,7 @@ $(which neofetch)
 alias ls="lsd"
 alias la="lsd -lA"
 alias ll="lsd -l"
+alias cat="bat"
 PATH="$PATH:$HOME/.cargo/bin"
 alias vim=nvim
 alias vi=nvim
@@ -58,3 +59,4 @@ eval "$(zoxide init zsh --cmd cd)"
 alias pd='git -C "$HOME/.dotfiles" commit -am "$(date)" && git -C "$HOME/.dotfiles" push'
 alias extonly='xrandr --output HDMI-2 --rate 75 --mode 3440x1440 --output eDP-1 --off'
 export PATH="$PATH:$HOME/.local/bin"
+
