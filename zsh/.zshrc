@@ -43,7 +43,7 @@ $(which neofetch)
 alias ls="lsd"
 alias la="lsd -lA"
 alias ll="lsd -l"
-alias cat="bat"
+alias cat="bat --theme Nord"
 PATH="$PATH:$HOME/.cargo/bin"
 alias vim=nvim
 alias vi=nvim
