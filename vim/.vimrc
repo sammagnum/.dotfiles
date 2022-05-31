@@ -37,3 +37,7 @@ set ts=2 sts=2 sw=2 si expandtab
 
 lua require('lspconfig').sumneko_lua.setup{}
 lua require('lspconfig').pyright.setup{}
+
+colorscheme nord
+
+
