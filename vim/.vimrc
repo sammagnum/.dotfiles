@@ -15,6 +15,7 @@ let mapleader=" "
 set hidden
 set relativenumber number
 set noswapfile
+set undofile
 set bo=all
 set hlsearch
 set incsearch
@@ -38,6 +39,7 @@ set ts=2 sts=2 sw=2 si expandtab
 lua require('lspconfig').sumneko_lua.setup{}
 lua require('lspconfig').pyright.setup{}
 lua require('lspconfig').rust_analyzer.setup{}
+lua require('lspconfig').bashls.setup{}
 
 colorscheme nord
 
