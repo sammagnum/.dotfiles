@@ -1,4 +1,5 @@
-# Lines configured by zsh-newuser-install
+#! /bin/bash
+## Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
@@ -41,7 +42,7 @@ then
 else
   source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
-$(which neofetch)
+neofetch
 alias ls="lsd"
 alias la="lsd -lA"
 alias ll="lsd -l"
