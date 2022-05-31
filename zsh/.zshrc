@@ -56,7 +56,7 @@ export FZF_CTRL_R_OPTS='--sort'
 export LC_CTYPE='en_US.UTF-8'
 
 eval "$(zoxide init zsh --cmd cd)"
-alias pd='git -C "$HOME/.dotfiles" commit -am "$(date)" && git -C "$HOME/.dotfiles" push'
+alias pd='git -C "$HOME/.dotfiles" commit -am "$(date)" && git -C "$HOME/.dotfiles" pull --rebase && git -C "$HOME/.dotfiles" push'
 alias extonly='xrandr --output DP-1-2 --rate 75 --mode 3440x1440 --output eDP-1 --off'
 export PATH="$PATH:$HOME/.local/bin"
 export EDITOR=nvim
