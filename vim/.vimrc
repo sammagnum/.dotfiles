@@ -30,7 +30,10 @@ Plug 'Yggdroot/indentLine'
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
 Plug 'shaunsingh/nord.nvim'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 set ts=2 sts=2 sw=2 si expandtab
-colorscheme nord
+
+lua require('lspconfig').sumneko_lua.setup{}
+lua require('lspconfig').pyright.setup{}
