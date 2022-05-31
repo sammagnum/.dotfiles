@@ -34,10 +34,12 @@ then
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 fi
   
-if [ $HOST = "ibm" ]
+if [[ $HOST = *"ibm"* ]]
 then
   source /usr/local/ibmcloud/autocomplete/zsh_autocomplete
   #$(which neofetch) --colors 4 6 1 2 8 6 --ascii_colors 19 1 18 4 17 6
+else
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 $(which neofetch)
 alias ls="lsd"
@@ -60,4 +62,3 @@ alias pd='git -C "$HOME/.dotfiles" commit -am "$(date)" && git -C "$HOME/.dotfil
 alias extonly='xrandr --output DP-1-2 --rate 75 --mode 3440x1440 --output eDP-1 --off'
 export PATH="$PATH:$HOME/.local/bin"
 export EDITOR=nvim
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
