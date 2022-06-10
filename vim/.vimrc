@@ -32,9 +32,12 @@ Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
 Plug 'shaunsingh/nord.nvim'
 Plug 'neovim/nvim-lspconfig'
+Plug 'rcarriga/nvim-notify'
 call plug#end()
 
 set ts=2 sts=2 sw=2 si expandtab
+
+tnoremap jk  <C-\><C-n>
 
 lua require('lspconfig').sumneko_lua.setup{}
 lua require('lspconfig').pyright.setup{}
@@ -43,4 +46,16 @@ lua require('lspconfig').bashls.setup{}
 
 colorscheme nord
 
-
+lua << EOF
+vim.lsp.handlers['window/showMessage'] = function(_, result, ctx)
+  local client = vim.lsp.get_client_by_id(ctx.client_id)
+  local lvl = ({ 'ERROR', 'WARN', 'INFO', 'DEBUG' })[result.type]
+  notify({ result.message }, lvl, {
+    title = 'LSP | ' .. client.name,
+    timeout = 10000,
+    keep = function()
+      return lvl == 'ERROR' or lvl == 'WARN'
+    end,
+  })
+end
+EOF
