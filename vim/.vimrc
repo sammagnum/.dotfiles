@@ -33,18 +33,22 @@ Plug 'preservim/vim-markdown'
 Plug 'shaunsingh/nord.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'rcarriga/nvim-notify'
+Plug 'konapun/vacuumline.nvim'
+Plug 'glepnir/galaxyline.nvim', {'branch': 'main'}
+Plug 'ryanoasis/vim-devicons' " vimscript
 call plug#end()
 
 set ts=2 sts=2 sw=2 si expandtab
 
 tnoremap jk  <C-\><C-n>
-
 lua require('lspconfig').sumneko_lua.setup{}
 lua require('lspconfig').pyright.setup{}
 lua require('lspconfig').rust_analyzer.setup{}
 lua require('lspconfig').bashls.setup{}
 
 colorscheme nord
+
+lua require('vacuumline').setup({ theme = require('vacuumline.theme.nord') })
 
 lua << EOF
 vim.lsp.handlers['window/showMessage'] = function(_, result, ctx)

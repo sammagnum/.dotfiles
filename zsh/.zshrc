@@ -66,6 +66,7 @@ git -C "$HOME/.dotfiles" push
 alias extonly='xrandr --output DP-1-2 --rate 75 --mode 3440x1440 --output eDP-1 --off'
 export PATH="$PATH:$HOME/.local/bin"
 export EDITOR=nvim
+<<<<<<< HEAD
 if ! command -v wal &> /dev/null
 then
   echo "pywal could not be found... using default colorscheme"
@@ -73,4 +74,6 @@ else
   uri="$(eval gsettings get org.gnome.desktop.background picture-uri)"
   eval wal -q -i ${uri:8:-1}
 fi
+=======
+>>>>>>> 8b701b6 (Mon Jul 18 10:27:50 PM CDT 2022)
 set -o emacs
